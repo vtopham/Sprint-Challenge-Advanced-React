@@ -1,26 +1,62 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from "axios"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import DisplayPlayers from "./components/DisplayPlayers"
+import ColorPicker from "./components/ColorPicker"
+
+import {useFetch} from "./hooks/useFetch"
+
+
+
+class App extends React.Component{
+  constructor() {
+    super()
+    this.state = {
+      playersArray: [{ //some fake data so i'm not hitting the api all the time
+        name: "megan",
+        country: "usa",
+        searches: 7
+      },
+      {
+        name: "jamie",
+        country: "France",
+        searches: 2
+      },
+      {
+        name: "marnie",
+        country: "Japan",
+        searches: 10
+      }
+      ]
+      //SHAPE: array of objects with country, id, name, searches
+    }
+    
+  }
+
+
+  componentDidMount() {
+    axios.get("http://localhost:5000/api/players")
+    .then(response => {
+      this.setState({
+        playersArray:response.data
+      })
+    })
+  }
+  
+  
+
+  render() {
+
+    return(
+      <>
+      <h1>This is the app!</h1>
+      <ColorPicker />
+      <DisplayPlayers playersArray = {this.state.playersArray}/> {/*call the component that displays all results*/}
+      </>
+    )
+  }
 }
 
 export default App;
