@@ -41,7 +41,6 @@ const ColorPicker = _ => {
             element.classList.remove("dodgerblue-theme")
             element.classList.remove("tomato-theme")
             element.classList.add(`${colorMode}`)
-            console.log(element.classList)
         })
         
     })

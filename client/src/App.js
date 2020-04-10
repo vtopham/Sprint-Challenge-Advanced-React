@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
+
 import DisplayPlayers from "./components/DisplayPlayers"
 import ColorPicker from "./components/ColorPicker"
 
@@ -30,6 +31,7 @@ class App extends React.Component{
   //     })
   //   })
   // }
+  
   
 
   render() {
