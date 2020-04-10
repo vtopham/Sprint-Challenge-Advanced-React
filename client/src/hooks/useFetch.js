@@ -1,4 +1,5 @@
 import React, {useEffect} from "react"
+import axios from "axios"
 
 export const useFetch = (url, stateSetter, key) => {
 
@@ -13,3 +14,4 @@ export const useFetch = (url, stateSetter, key) => {
 
 }
 
+//THIS WOULD BE USED IF APP WAS A FUNCTIONAL COMPONENT
