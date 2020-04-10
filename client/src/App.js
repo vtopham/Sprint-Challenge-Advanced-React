@@ -10,7 +10,11 @@ class App extends React.Component{
   constructor() {
     super()
     this.state = {
-      playersArray: []
+      playersArray: [{
+        name: "megan",
+        country: "usa",
+        searches: 7
+      }]
       //SHAPE: array of objects with country, id, name, searches
     }
     
