@@ -13,7 +13,7 @@ const Card = styled.p`
 
 `
 const PlayerCard = (props) => {
-    const {player} = props
+    const {player, key} = props
 
     return(
         <>
