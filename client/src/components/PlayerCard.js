@@ -8,7 +8,7 @@ const Card = styled.p`
     line-height: 1.5;
 
     span {
-        color: dodgerblue;
+        
     }
 
 `

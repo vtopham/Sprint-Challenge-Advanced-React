@@ -16,7 +16,7 @@ const DisplayPlayers = (props) => {
         <h2>Please view all {playersArray.length} of our lovely players</h2>
         <Results>
             {playersArray.map(player => { //loop through the array of players and produce a card per player
-                return <PlayerCard player = {player}/>
+                return <PlayerCard id = {player.id} player = {player}/>
             })}
         </Results>
         </>

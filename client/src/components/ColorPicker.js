@@ -21,9 +21,9 @@ const ButtonHolder = styled.div`
             background: dodgerblue;
         }
     `
-const ColorPicker = _ => {
+const ColorPicker = _ => { 
 
-    const [colorMode, setColorMode] = useColorMode("dodgerblue-theme")
+    const [colorMode, setColorMode] = useColorMode("dodgerblue-theme") //set up state in localstorage to store what colors the individual prefers as an accent
     const setRedMode = event => {
         event.preventDefault()
         setColorMode("tomato-theme")
@@ -34,7 +34,7 @@ const ColorPicker = _ => {
         setColorMode("dodgerblue-theme")
     }
 
-    useEffect ( _ => {
+    useEffect ( _ => { //after render, go to each span and change the class
         const spanList = document.getElementsByTagName("span")
         
         Array.from(spanList).map(element => {
