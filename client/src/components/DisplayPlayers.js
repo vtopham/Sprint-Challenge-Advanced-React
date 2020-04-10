@@ -19,14 +19,15 @@ const DisplayPlayers = (props) => {
     const [faveInput, setFaveInput] = useState("");
 
 
-    const handlePlayerInput = (event) => {
+    const handlePlayerInput = (event) => { //save input typed to state
         event.preventDefault()
         setFaveInput(event.target.value)
     }
-    const handleFavePlayer = (event) => {
+    const handleFavePlayer = (event) => { //when they click the button, send state to localstorage and reset
         event.preventDefault()
-        // setPlayerRemember(document.getElementById("faveName").value)
-        console.log(document.getElementById("faveName").value)
+        setPlayerRemember(faveInput)
+        setFaveInput("")
+        
     }
     return(
         <>
@@ -35,6 +36,9 @@ const DisplayPlayers = (props) => {
             <label htmlFor = "faveName">Type in the name of your favorite player here so we'll remember it!</label>
             <input type = "text" id="faveName" onChange = {handlePlayerInput} value = {faveInput}/>
             <button onClick = {handleFavePlayer}>Update favorite player</button>
+
+            <h4>Your current favorite player is...</h4>
+            <p>{playerRemember}</p>
         </div>
         <Results>
             {playersArray.map(player => { //loop through the array of players and produce a card per player
