@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
+import DisplayPlayers from "./components/DisplayPlayers"
 
 
 
@@ -30,6 +31,7 @@ class App extends React.Component{
     return(
       <>
       <h1>This is the app!</h1>
+      <DisplayPlayers playersArray = {this.state.playersArray}/>
       </>
     )
   }
