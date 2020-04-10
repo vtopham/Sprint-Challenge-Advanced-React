@@ -16,7 +16,18 @@ class App extends React.Component{
         name: "megan",
         country: "usa",
         searches: 7
-      }]
+      },
+      {
+        name: "jamie",
+        country: "France",
+        searches: 2
+      },
+      {
+        name: "marnie",
+        country: "Japan",
+        searches: 10
+      }
+      ]
       //SHAPE: array of objects with country, id, name, searches
     }
     
