@@ -34,14 +34,14 @@ class App extends React.Component{
   }
 
 
-  // componentDidMount() {
-  //   axios.get("http://localhost:5000/api/players")
-  //   .then(response => {
-  //     this.setState({
-  //       playersArray:response.data
-  //     })
-  //   })
-  // }
+  componentDidMount() {
+    axios.get("http://localhost:5000/api/players")
+    .then(response => {
+      this.setState({
+        playersArray:response.data
+      })
+    })
+  }
   
   
 
