@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
 import DisplayPlayers from "./components/DisplayPlayers"
+import ColorPicker from "./components/ColorPicker"
 
 
 
@@ -10,7 +11,7 @@ class App extends React.Component{
   constructor() {
     super()
     this.state = {
-      playersArray: [{
+      playersArray: [{ //some fake data so i'm not hitting the api all the time
         name: "megan",
         country: "usa",
         searches: 7
@@ -21,21 +22,23 @@ class App extends React.Component{
   }
 
 
-  componentDidMount() {
-    axios.get("http://localhost:5000/api/players")
-    .then(response => {
-      this.setState({
-        playersArray:response.data
-      })
-    })
-  }
+  // componentDidMount() {
+  //   axios.get("http://localhost:5000/api/players")
+  //   .then(response => {
+  //     this.setState({
+  //       playersArray:response.data
+  //     })
+  //   })
+  // }
   
 
   render() {
+
     return(
       <>
       <h1>This is the app!</h1>
-      <DisplayPlayers playersArray = {this.state.playersArray}/>
+      <ColorPicker />
+      <DisplayPlayers playersArray = {this.state.playersArray}/> {/*call the component that displays all results*/}
       </>
     )
   }
